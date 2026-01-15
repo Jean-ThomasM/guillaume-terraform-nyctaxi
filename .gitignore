@@ -101,7 +101,6 @@ htmlcov/
 terraform.tfstate
 terraform.tfstate.backup
 *.tfvars
-terraform
 *.tfstate
 *.tfstate.*
 *.tfvars
