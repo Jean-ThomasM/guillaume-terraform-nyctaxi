@@ -1,3 +1,4 @@
+# variables.tf module container_registry
 variable "acr_sku" {
     type = string
 }
@@ -15,5 +16,5 @@ variable "acr_admin_enabled" {
 }
 
 variable "acr_name" {
-    type = bool
+    type = string
 }

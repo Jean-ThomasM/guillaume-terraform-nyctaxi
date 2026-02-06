@@ -16,3 +16,12 @@ output "acr_admin_password" {
 output "container_registry_login_server" {
   value = module.acr_module.container_registry_login_server
 }
+
+output "cosmosdb_admin_password" {
+  value     = var.cosmosdb_password
+  sensitive = true
+}
+
+output "cosmosdb_host" {
+  value = module.cosmosdb_postgre_module.cosmosdb_host
+}

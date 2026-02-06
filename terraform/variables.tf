@@ -26,11 +26,16 @@ variable "location" {
   type = string
 }
 
+# module storage
 variable "account_tier" {
     type = string
 }
 
 variable "account_replication_type" {
+    type = string
+}
+
+variable "storage_kind" {
     type = string
 }
 
@@ -50,22 +55,6 @@ variable "cosmos_db_admin_username" {
   type = string
 }
 
-variable "container_apps_cpu" {
-  type = number
-}
-
-variable "container_apps_memory" {
-  type = string
-}
-
-variable "container_apps_min_replicas" {
-  type = number
-}
-
-variable "container_apps_max_replicas" {
-  type = number
-}
-
 # module container_registry
 
 variable "acr_sku" {
@@ -82,4 +71,85 @@ variable "container_image_name" {
 
 variable "container_image_tag" {
   type = string
+}
+
+# cosmos db postgres
+variable "cosmosdb_password" {
+    type = string
+    sensitive = true
+}
+
+variable "cosmosdb_storage_mb" {
+    type = number
+}
+
+variable "cosmosdb_vcore_count" {
+    type = number
+}
+
+variable "cosmosdb_node_count" {
+    type = number
+}
+
+variable "cosmosdb_server_edition" {
+    type = string
+}
+
+variable "cosmosdb_firewall_name" {
+    type = string
+}
+
+variable "allowed_ips" {
+  type    = list(string)
+  default = []
+}
+
+# module log analytics workspace
+variable "log_an_wsp_sku" {
+    type = string
+}
+
+variable "log_an_wsp_retention" {
+    type = number
+}
+
+# container apps environment
+variable "aca_env_logs_destination" {
+    type = string
+}
+
+# container apps
+variable "aca_cpu" {
+    type = number
+}
+
+variable "aca_memory" {
+    type = string
+}
+
+
+variable "aca_max_replicas" {
+    type = number
+}
+
+variable "aca_min_replicas" {
+    type = number
+}
+
+variable "azure_container_name" {
+    type = string
+}
+
+variable "postgres_db" {
+  type = string
+  default = "citus"
+}
+
+variable "postgres_port" {
+  type = number
+  default = 5432
+}
+
+variable "subscription_id" {
+    type = string
 }

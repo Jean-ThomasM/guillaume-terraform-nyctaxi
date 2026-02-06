@@ -23,3 +23,7 @@ variable "account_tier" {
 variable "account_replication_type" {
     type = string
 }
+
+variable "storage_kind" {
+    type = string
+}
